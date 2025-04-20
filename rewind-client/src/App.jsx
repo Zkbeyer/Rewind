@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from 'react'
 import './App.css'
-import queryString from 'query-string';
 
 import Login from './Login';
 import TrackList from './TrackList';
