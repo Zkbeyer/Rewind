@@ -67,7 +67,6 @@ function App() {
   useEffect(() => {
     const cached = localStorage.getItem('summary');
     if (cached) {
-      console.log('Using cached summary');
       const summary = JSON.parse(cached);
       setSummary(summary);
       setSummaryFetched(true);
@@ -79,7 +78,6 @@ function App() {
     if (!allDataLoaded || summaryFetched) {
       return;
     }
-    console.log('Fetching summary');
       const fetchSummary = async () => {
         try {
           setSummaryLoading(true);
