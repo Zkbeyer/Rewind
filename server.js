@@ -24,8 +24,6 @@ const REDIRECT_URI = process.env.REDIRECT_URI;
 
 app.post('/api/summary', async (req, res) => {
     const { userData } = req.body;
-
-    console.log("User Data:", req.body);
     
     const prompt = `Here is a spotify user's listening data in JSON format. Please analyze it and write a fun freindly summary of their music taste. Feel free to use the user's name as well. ${JSON.stringify(userData)}`;
 
@@ -52,7 +50,6 @@ app.post('/api/summary', async (req, res) => {
             }),
         });
         const data = await response.json();
-        console.log("Data:", data);
         const summary = data.choices[0].message.content;
         res.json({ summary });
     } catch (error) {
@@ -130,7 +127,6 @@ app.post('/refresh', async (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-    console.log('Logging out');
     localStorage.clear();
     
     res.status(200).json({ success: true });
