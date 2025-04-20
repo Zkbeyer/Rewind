@@ -416,7 +416,7 @@ function App() {
     <div id="mouse-shadow"></div>
     <div style={{display: 'flex', alignItems: 'center',justifyContent: 'space-between', backgroundColor: 'rgba(1, 18, 3, 0.9)', width: '100%', position: 'fixed', top: '0', right: '0',zIndex: '2', }}>
             <UserProfile user={user} />
-            <h1 style={{ marginRight: '4rem'}}>Spotify Rewind</h1>
+            <h1 style={{ marginRight: '4rem'}}>Rewind</h1>
             <Logout setToken={setToken} user={user}/>
           </div>
     <div className="main-cotent">
