@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   });
 
 app.use(cors({
-    origin: 'https://spotify-rewind.vercel.app',
+    origin: 'https://your-rewind.vercel.app',
     credentials: true
 }));
 app.use(express.json( {limit: '1mb'}));
@@ -134,7 +134,7 @@ app.get('/logout', (req, res) => {
     localStorage.clear();
     
     res.status(200).json({ success: true });
-    res.redirect('https://spotify-rewind.vercel.app/');
+    res.redirect('https://your-rewind.vercel.app/');
   });
 
 
