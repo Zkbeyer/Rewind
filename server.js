@@ -71,7 +71,7 @@ app.get('/login', (req, res) => {
         'user-read-currently-playing',
         'user-modify-playback-state',
     ].join(' ');
-    const redirectUrl = `https://accounts.spotify.com/authorize?redirect_uri=${REDIRECT_URI}&client_id=${CLIENT_ID}&scope=${scope}&response_type=code`
+    const redirectUrl = `https://accounts.spotify.com/authorize?redirect_uri=https://rewind-api.onrender.com/callback&client_id=${CLIENT_ID}&scope=${scope}&response_type=code`
     res.redirect(redirectUrl);
 });
 
