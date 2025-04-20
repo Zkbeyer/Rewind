@@ -9,7 +9,6 @@ import Logout from './Logout';
 import RecentlyPlayed from './RecentlyPlayed';
 import TopArtists from './TopArtists'; 
 import TopGenres from './TopGenres';
-import Draggable from 'react-draggable';
 
 function App() {
   const [token, setToken] = useState(null);
@@ -84,7 +83,7 @@ function App() {
       const fetchSummary = async () => {
         try {
           setSummaryLoading(true);
-          const res = await fetch('https://ee04-161-130-189-252.ngrok-free.app/api/summary', {
+          const res = await fetch('https://spotify-rewind.vercel.app/api/summary', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -198,7 +197,7 @@ function App() {
   const refreshAccessToken = async () => {
     const refresh_token = getRefreshToken();
     if (!refresh_token) return;
-    const response = await fetch('https://ee04-161-130-189-252.ngrok-free.app/refresh', {
+    const response = await fetch('https://spotify-rewind.vercel.app/refresh', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -376,7 +375,7 @@ function App() {
       topGenres: topGenres,
     }
     
-    const res = await fetch('https://ee04-161-130-189-252.ngrok-free.app/api/summary', {
+    const res = await fetch('https://spotify-rewind.vercel.app/api/summary', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
