@@ -6,17 +6,13 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const allowedOrigins = [
-    'http://localhost:5173',
-    "https://ee04-161-130-189-252.ngrok-free.app",
-];
 
 app.get('/', (req, res) => {
     res.send('Rewind API is running ✅');
   });
 
 app.use(cors({
-    origin: 'https://rewind.verce.app',
+    origin: 'https://spotify-rewind.vercel.app',
     credentials: true
 }));
 app.use(express.json( {limit: '1mb'}));
@@ -96,7 +92,7 @@ app.get('/callback', async (req, res) => {
     try {
         const response = await axios.post('https://accounts.spotify.com/api/token', params, headers);
         const { access_token, refresh_token, expires_in } = response.data;
-        const redirectUrl = `http://localhost:5173/?access_token=${access_token}&refresh_token=${refresh_token}`;
+        const redirectUrl = `https://spotify-rewind.vercel.app/?access_token=${access_token}&refresh_token=${refresh_token}`;
         res.redirect(redirectUrl);
     } catch (error) {
         console.error(error + 'Error during token exchange');
@@ -138,7 +134,7 @@ app.get('/logout', (req, res) => {
     localStorage.clear();
     
     res.status(200).json({ success: true });
-    res.redirect('http://localhost:5173/');
+    res.redirect('https://spotify-rewind.vercel.app/');
   });
 
 
