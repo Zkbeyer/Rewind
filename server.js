@@ -14,7 +14,7 @@ const allowedOrigins = [
 app.get('/', (req, res) => {
     res.send('Rewind API is running ✅');
   });
-  
+
 app.use(cors({
     origin: 'https://rewind.verce.app',
     credentials: true
@@ -144,5 +144,5 @@ app.get('/logout', (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log('Server is running on port 3001');
+    console.log('Server is running on port', PORT);
 });
