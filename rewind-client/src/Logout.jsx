@@ -3,7 +3,7 @@ function Logout({setToken, user}) {
     return (
       <div style={{paddingRight : '1rem'}}>
           <button style={{backgroundColor: '#001f14'}} onClick={() => {
-              fetch('https://rewind-api.onrender.com/logout', {
+              fetch('https://spotify-rewind-backend.onrender.com/logout', {
                 method: 'GET',
               }).then(() => {
                 localStorage.clear();

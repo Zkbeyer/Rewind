@@ -83,7 +83,7 @@ function App() {
       const fetchSummary = async () => {
         try {
           setSummaryLoading(true);
-          const res = await fetch('https://spotify-rewind.vercel.app/api/summary', {
+          const res = await fetch('https://spotify-rewind-backend.onrender.com/api/summary', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -197,7 +197,7 @@ function App() {
   const refreshAccessToken = async () => {
     const refresh_token = getRefreshToken();
     if (!refresh_token) return;
-    const response = await fetch('https://spotify-rewind.vercel.app/refresh', {
+    const response = await fetch('https://spotify-rewind-backend.onrender.com/refresh', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -375,7 +375,7 @@ function App() {
       topGenres: topGenres,
     }
     
-    const res = await fetch('https://spotify-rewind.vercel.app/api/summary', {
+    const res = await fetch('https://spotify-rewind-backend.onrender.com/api/summary', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
