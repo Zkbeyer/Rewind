@@ -92,7 +92,7 @@ app.get('/callback', async (req, res) => {
     try {
         const response = await axios.post('https://accounts.spotify.com/api/token', params, headers);
         const { access_token, refresh_token, expires_in } = response.data;
-        const redirectUrl = `https://spotify-rewind.vercel.app/?access_token=${access_token}&refresh_token=${refresh_token}`;
+        const redirectUrl = `https://your-rewind.vercel.app/?access_token=${access_token}&refresh_token=${refresh_token}`;
         res.redirect(redirectUrl);
     } catch (error) {
         console.error(error + 'Error during token exchange');
