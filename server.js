@@ -10,8 +10,13 @@ const allowedOrigins = [
     'http://localhost:5173',
     "https://ee04-161-130-189-252.ngrok-free.app",
 ];
+
+app.get('/', (req, res) => {
+    res.send('Rewind API is running ✅');
+  });
+  
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://rewind.verce.app',
     credentials: true
 }));
 app.use(express.json( {limit: '1mb'}));
@@ -137,7 +142,7 @@ app.get('/logout', (req, res) => {
   });
 
 
-
-app.listen(3001, () => {
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
     console.log('Server is running on port 3001');
 });
