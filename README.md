@@ -53,4 +53,11 @@ All wrapped in a sleek, parallax-enhanced interface with ripple effects and dark
 
 ## 🌐 Live Demo
 
-- Frontend: [https://rewind.vercel.app](https://rewind.vercel.app)  
+- Frontend: [https://rewind.vercel.app](https://rewind.vercel.app)
+
+- PLEASE NOTE:
+  This application is currently in development mode on spotify API so it will not work unless your email is registered with the owner
+  This application is currently waiting to be reviewed by Sotify to open it up to all users
+  If you want to use the site please email me at zkbeyer@icloud.com with your first/last name and the email associated with your account
+  Also not you must have premium to use the app in its entirety
+
